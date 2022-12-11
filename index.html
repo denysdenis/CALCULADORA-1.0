@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gelary">
+        <h1 class="cal-name">Calculator</h1>
+        <div class="display">
+            <input class="display" type="text" id="result" maxlength="10">
+        </div>
+        <div class="all-btn">
+        <div class="">
+            <div>
+                <input type="button" class="btn" value="C">
+                <input type="button" class="btn" value="(">
+                <input type="button" class="btn" value=")">
+                <input type="button" class="btn" value="/">
+            </div>
+
+        </div>
+        <div class="">
+            <div>
+                <input type="button" class="btn" value="7">
+                <input type="button" class="btn" value="8">
+                <input type="button" class="btn" value="9">
+                <input type="button" class="btn" value="x">
+            </div>
+
+        </div>
+        <div class="">
+            <div>
+                <input type="button" class="btn" value="4">
+                <input type="button" class="btn" value="5">
+                <input type="button" class="btn" value="6">
+                <input type="button" class="btn" value="-">
+            </div>
+
+        </div>
+        <div class="">
+            <div>
+                <input type="button" class="btn" value="1">
+                <input type="button" class="btn" value="2">
+                <input type="button" class="btn" value="3">
+                <input type="button" class="btn" value="+">
+            </div>
+
+        </div>
+        <div class="">
+            <div>
+                <input type="button" class="btn" value="0">
+                <input type="button" class="btn" value=".">
+                <input type="button" class="btn" value="%">
+                <input type="button" class="btn" value="=">
+            </div>
+
+        </div>
+    </div>
+        
+    </div>
+    <script>
+        let screen = document.getElementById("result")
+        let button = document.getElementsByClassName("btn")
+
+        for (let i = 0 ;i<button.length;i++){
+            button[i].addEventListener("click",function(event){
+                buttonText = event.target.value
+                if (buttonText == "C"){
+                    screen.value = ""
+                }
+                else if (buttonText == "x"){
+                    screen.value += "*"
+                }
+                else if (buttonText == "="){
+                    let equalValue =  eval(screen.value);
+                    screen.value = equalValue 
+                }
+                else{
+                    screen.value += buttonText;
+                }
+            })
+        }
+    </script>
+</body>
+</html>
